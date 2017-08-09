@@ -1,0 +1,9 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<import src="../template/template"></import>
+<view class="show-shop">
+  <view class="near-shop">
+    <view class="slide ">{{ title }}</view>
+      <view wx:if="{{ nearShop.length == 0 }}" class="noshop">很抱歉，暂时没有合适您的商家</view>
+      <template is="shopList" data="{{ nearShops: nearShop, stars: star }}"></template>
+  </view>
+</view>

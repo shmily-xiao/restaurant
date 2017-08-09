@@ -1,0 +1,45 @@
+<!--carousel template-->
+<template name="carousel">
+    <view class="swiper">
+        <swiper indicator-dots="true" indicator-active-color="#fff" indicator-color="#ed4d30" autoplay="true" interval="5000" duration="500" circular="true" >
+            <block wx:for="{{ imgUrls }}" wx:key="unique">
+                <swiper-item>
+                    <image src="{{ item }}" class="slide-image"/>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+</template>
+<!--shopList template-->
+<template name="shopList">
+    <view class="near-shop-wrap">
+        <navigator url="../ordering/ordering?s_id={{ item.id }}" hover-class="none" class="near-shop-content" wx:for="{{ nearShops }}" wx:key="unique">
+            <image class="near-shop-img" src="{{ item.img }}"></image>
+            <view class="near-shop-detail">
+                <veiw class="n-s-c-name">{{ item.name }}</veiw>
+                <view class="n-s-c-price {{ stars[item.level] || stars[5] }} iconfont icon-wuxing"> ￥{{ item.price }}/人</view>
+                <view class="n-s-c-kind">{{ item.cat_name }}  {{ item.km }}km</view>
+                <view class="n-s-c-status">
+                    <text class="n-s-c-s-left {{ item.tab_status == '无需排队' ? 'n-s-c-s-left-two' : '' }}">排队</text>
+                    <text class="n-s-c-s-center">当前排队状况</text>
+                    <text class="n-s-c-s-right">{{ item.tab_status }}</text>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <!--<view class="near-shop-wrap">-->
+        <!--<navigator url="../ordering/ordering?s_id={{ item.id }}" hover-class="none" class="near-shop-content" wx:for="{{ nearShop }}" wx:key="unique">-->
+            <!--<image class="near-shop-img" src="{{ item.img }}"></image>-->
+            <!--<view class="near-shop-detail">-->
+                <!--<veiw class="n-s-c-name">{{ item.name }}</veiw>-->
+                <!--<view class="n-s-c-price {{ star[item.level] }} iconfont icon-wuxing"> ￥{{ item.price }}/人</view>-->
+                <!--<view class="n-s-c-kind">{{ item.cat_name }}  {{ item.km }}km</view>-->
+                <!--<view class="n-s-c-status">-->
+                    <!--<text class="n-s-c-s-left">排队</text>-->
+                    <!--<text class="n-s-c-s-center">当前排队状况</text>-->
+                    <!--<text class="n-s-c-s-right">{{ item.status }}</text>-->
+                <!--</view>-->
+            <!--</view>-->
+        <!--</navigator>-->
+    <!--</view>-->
+</template>

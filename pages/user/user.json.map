@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["pages/user/user.json"],"sourcesContent":["// Window configuration\r\n// https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html#window\r\n{\r\n  \"navigationBarTitleText\": \"我的\"\r\n}\r\n"],"file":"user.json"}
