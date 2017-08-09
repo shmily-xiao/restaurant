@@ -1,29 +1,50 @@
 <import src="../template/template" />
 <view class="container">
   <!--顶部搜索栏-->
-  <view class="search">
+  <!--<view class="search">-->
     <!--当前位置-->
-    <view bindtap="chooseLocation" class="search-site triangle">{{ userSite }}</view>
+    <!--<view bindtap="chooseLocation" class="search-site triangle">{{ userSite }}</view>
     <view bindtap="goSearch" class="search-in iconfont icon-sousuo_sousuo">搜索餐厅、 菜系、 商圈</view>
-  </view>
+  </view>-->
   <!--carousel-->
   <template is="carousel" data="{{ imgUrls }}"></template>
   <!--nav-->
   <view class="nav">
-    <navigator url="../showShop/showShop?type={{ index }}" hover-class="none" class="{{ item.navIcon }}" wx:for="{{ navList }}" wx:key="unique">
+    <navigator url="{{ item.navIcon }}" hover-class="none" class="{{ item.navIcon }}" wx:for="{{ navList }}" wx:key="unique">
+      {{ item.navTitle }}
+    </navigator>
+  </view>
+  <view class="nav">
+  <!--../showShop/showShop?type={{ index }}-->
+    <navigator url="../showShop/showShop?type={{ index }}" hover-class="none" class="{{ item.navIcon }}" wx:for="{{ navList2 }}" wx:key="unique">
       {{ item.navTitle }}
     </navigator>
   </view>
   <!--hot-shop-->
   <view class="hot-shop">
-    <view class="slide">热门商家</view>
+    <view class="slide">加盟商家 <navigator class="more" url="../detail/detail?s_id={{ item.id }}">更多</navigator></view>
     <view class="hot-shop-wrap">
-      <navigator url="../detail/detail?s_id={{ item.id }}" hover-class="none" class="hot-shop-content" wx:for="{{ hotShop }}" wx:key="unique">
-        <image class="hot-shop-img" src="{{ item.img }}"></image>
-        {{ item.name }}
+      <navigator url="../detail/detail?s_id={{ item.id }}" hover-class="none" class="hot-shop-content" wx:for="{{ hotShops }}" wx:key="unique">
+        <image class="hot-shop-img" src="{{ item.shopImg }}"></image>
+        {{ item.shopName }}
       </navigator>
     </view>
   </view>
+
+<view class="hot-shop">
+    <view class="slide">餐饮动态 <span class="more">更多</span></view>
+    <view class="hot-shop-wrap">
+      <view>
+        <view>asdasd</view>
+        <span>aasds</span>
+      </view>
+      <!--<navigator url="../detail/detail?s_id={{ item.id }}" hover-class="none" class="hot-shop-content" wx:for="{{ restaurantInfo }}" wx:key="unique">
+        
+        {{ item.shopName }}
+      </navigator>-->
+    </view>
+  </view>
+
   <!--near-shop-->
   <view class="near-shop">
     <view class="slide ">附近商家</view>

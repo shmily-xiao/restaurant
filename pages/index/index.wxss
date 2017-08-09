@@ -65,6 +65,10 @@
 .hot-shop {
   border-bottom: 11rpx solid #eee;
 }
+.hot-shop .slide .more{
+  float:right;
+  margin-right:20px;
+}
 .hot-shop-wrap {
   display: flex;
   flex-wrap: wrap;
