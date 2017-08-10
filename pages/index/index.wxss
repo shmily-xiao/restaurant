@@ -90,3 +90,30 @@
   width: 172rpx;
   height: 129rpx;
 }
+.restaurant_info{
+  height:90rpx;
+  width: 93%;
+  overflow:hidden;
+  box-sizing: border-box;
+  border-bottom-style:dashed;
+  border-bottom-color:gray;
+  border-bottom-width: 1rpx;
+  border-radius: 5px;
+  margin-top: 20rpx;
+  margin-left:4%;
+  margin-bottom: 15rpx;
+}
+.now-title{
+  font-size: 16px;
+  line-height: 22px;
+}
+.evaluate{
+  font-size: 14px;
+  color:#666;
+  line-height: 20px;
+}
+.describe{
+  font-size: 14px;
+  color:#666;
+  line-height: 20px;
+}
