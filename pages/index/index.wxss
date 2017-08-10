@@ -91,21 +91,21 @@
   height: 129rpx;
 }
 .restaurant_info{
-  height:90rpx;
-  width: 93%;
+  height:100rpx;
+  width: 100%;
   overflow:hidden;
   box-sizing: border-box;
   border-bottom-style:dashed;
   border-bottom-color:gray;
   border-bottom-width: 1rpx;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
   margin-top: 20rpx;
   margin-left:4%;
   margin-bottom: 15rpx;
 }
 .now-title{
   font-size: 16px;
-  line-height: 22px;
+  /*line-height: 22px;*/
 }
 .evaluate{
   font-size: 14px;
@@ -115,5 +115,43 @@
 .describe{
   font-size: 14px;
   color:#666;
-  line-height: 20px;
+  margin-top:4px;
+  /*line-height: 20px;*/
+}
+
+.n-s-c-intro{
+  font-size: 26rpx;
+  color: #ccc;
+  position: relative;
+  overflow: hidden;
+  padding-left: 6rpx;
+}
+
+.n-s-c-s-price {
+  font-size: 26rpx;
+  color: #ed4d30;
+  position: relative;
+  overflow: hidden;
+  padding-left: 7rpx;
+}
+
+.buy {
+  flex: 1;
+  text-align: right;
+  color: #f03c3c;
+  display: flex;
+  font-size: 24rpx;
+  padding-left: 20rpx;
+  width: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.button_buy{
+  font-size:24rpx;
+float:right;
+margin-right:-3rpx;
+top:-14rpx;
+color:red;
 }

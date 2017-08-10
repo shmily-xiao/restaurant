@@ -12,6 +12,7 @@ Page({
     title: 'index',
     userInfo: null,
     userSite: '定位中',
+    searchPageNum: 1,
     navList: [{
       navTitle: '餐饮动态',
       navIcon: 'iconfont icon-shalou',
@@ -100,31 +101,28 @@ Page({
         intro:"jkblbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
       }
     ],
-    nearShop: [
+    cate_recommend: [
       {
+        id:"1",
         img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
         name: '青花椒砂锅鱼2',
-        price: '30',
-        kind: '中国菜',
-        distance: '8.6km',
-        status: '无需排队',
-        grade: 'five-star'
+        price: '30',     
+        intro: '无需排队'     
       },
       {
+        id:"1",
         img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-        name: '青花椒砂锅鱼2',
+        name: '青花椒砂锅鱼31',
         price: '30',
-        kind: '中国菜',
-        status: '无需排队',
-        grade: 'four-star'
+        intro: '无需排队'
+
       },
       {
+        id:"1",
         img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-        name: '青花椒砂锅鱼2',
+        name: '青花椒砂锅鱼3',
         price: '128',
-        kind: '中国菜',
-        status: '无需排队',
-        grade: 'one-star'
+        intro: '无需排队',
       }
     ],
     imgUrls: [
@@ -132,8 +130,9 @@ Page({
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ],
-    star: ['zero-star', 'one-star', 'two-star', 'three-star', 'four-star', 'five-star']
-  },
+    star: ['zero-star', 'one-star', 'two-star', 'three-star', 'four-star', 'five-star'],
+
+},
   /**
    * 用户选择位置
    * @returns {boolean}
@@ -392,6 +391,52 @@ Page({
    */
   onPullDownRefresh: function onPullDownRefresh() {
     console.log(' ---------- onPullDownRefresh ----------');
-  }
+  },
+
+  // 上拉加载
+  onReachBottom: function () {
+    let searchPageNum = this.data.searchPageNum + 1
+    let pageList = this.data.cate_recommend;
+    console.log(' ---------- onReachBottom ----------');
+
+    console.log(this.data.cate_recommend);
+    this.setData({
+      searchPageNum:searchPageNum,
+      cate_recommend: [
+      {
+        id:"1",
+        img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        name: '青花椒砂锅鱼11'+searchPageNum,
+        price: '30',     
+        intro: '无需排队'     
+      },
+      {
+        id:"1",
+        img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        name: '青花椒砂锅鱼33'+searchPageNum,
+        price: '30',
+        intro: '无需排队'
+
+      },
+      {
+        id:"1",
+        img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        name: '青花椒砂锅鱼3'+searchPageNum,
+        price: '128',
+        intro: '无需排队',
+      }
+    ].concat(pageList).reverse(),
+    imgUrls: [
+      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+    ],
+    })
+  // 我们用total和count来控制分页，total代表已请求数据的总数，count代表每次请求的个数。
+  // 上拉时需把total在原来的基础上加上count，代表从count条后的数据开始请求。
+  // total += count;
+  // 网络请求
+  // this.periphery();
+  },
 });
 //# sourceMappingURL=index.js.map

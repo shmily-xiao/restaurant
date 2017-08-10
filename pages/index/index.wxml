@@ -60,19 +60,21 @@
   <!--near-shop-->
   <view class="near-shop">
     <view class="slide ">美食推荐</view>
-    <view class="no-shop" wx:if="{{ nearShop.length == 0 }}">哎呀，您的附近暂无商家哦~</view>
-    <view wx:if="{{ nearShop.length != 0 }}" class="near-shop-wrap">
-      <navigator url="../ordering/ordering?s_id={{ item.id }}" hover-class="none" class="near-shop-content" wx:for="{{ nearShop }}" wx:key="unique">
+    <view class="no-shop" wx:if="{{ cate_recommend.length == 0 }}">哎呀，暂时没有美食推荐哦~</view>
+    <view wx:if="{{ cate_recommend.length != 0 }}" class="near-shop-wrap">
+      <navigator url="../ordering/ordering?s_id={{ item.id }}" hover-class="none" class="near-shop-content" wx:for="{{ cate_recommend }}" wx:key="unique">
         <image class="near-shop-img" src="{{ item.img }}"></image>
         <view class="near-shop-detail">
           <veiw class="n-s-c-name">{{ item.name }}</veiw>
-          <view class="n-s-c-price {{ star[item.level] }} iconfont icon-wuxing"> ￥{{ item.price }}/人</view>
-          <view class="n-s-c-kind">{{ item.cat_name }}  {{ item.km }}km</view>
+
+          <view class="n-s-c-intro"> {{item.intro}}</view>
           <view class="n-s-c-status">
-            <text class="n-s-c-s-left {{ item.tab_status == '无需排队' ? 'n-s-c-s-left-two' : '' }}">排队</text>
-            <text class="n-s-c-s-center">当前排队状况</text>
-            <text class="n-s-c-s-right">{{ item.tab_status }}</text>
+            <text class="n-s-c-s-left ">单价：</text>
+            <text class="n-s-c-s-price">￥{{ item.price }}</text>
+            <!--style="margin-top:-7px;margin-left:53%;height:24px;"-->
+           <button class="button_buy" size="default" > 购买</button>
           </view>
+          
         </view>
       </navigator>
     </view>
