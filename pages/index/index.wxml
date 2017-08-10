@@ -59,7 +59,7 @@
 
   <!--near-shop-->
   <view class="near-shop">
-    <view class="slide ">附近商家</view>
+    <view class="slide ">美食推荐</view>
     <view class="no-shop" wx:if="{{ nearShop.length == 0 }}">哎呀，您的附近暂无商家哦~</view>
     <view wx:if="{{ nearShop.length != 0 }}" class="near-shop-wrap">
       <navigator url="../ordering/ordering?s_id={{ item.id }}" hover-class="none" class="near-shop-content" wx:for="{{ nearShop }}" wx:key="unique">
